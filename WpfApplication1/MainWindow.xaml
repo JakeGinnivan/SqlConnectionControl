@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:WpfApplication1="clr-namespace:WpfApplication1"
+        Title="MainWindow"
+        Height="350"
+        Width="525"
+        x:Name="_this">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <WpfApplication1:SqlConnectionStringBuilder ConnectionString="{Binding ElementName=_this, Path=Test}" />
+        <TextBlock Text="{Binding ElementName=_this, Path=Test, StringFormat='Produced Connection String: {0}'}"
+                   Grid.Row="1" />
+    </Grid>
+</Window>
